@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Test from './components/core'
 
-render(<h1>zeroexu</h1>,
+render(<Test />,
     document.getElementById('core')); 
