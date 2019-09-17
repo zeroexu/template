@@ -7,7 +7,7 @@ module.export = {
         filename: 'bundle.js'
     },
 
-    modules: {
+    module: {
         rules: []
     },
     plugins: [
