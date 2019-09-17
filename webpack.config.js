@@ -11,14 +11,14 @@ module.exports = {
         port: 4000
     },
     module: {
-        rules: {
-            test: /\.(js | jsx)$/,
+        rules: [{
+            test: /\.(js|jsx)$/,
             use: ['babel-loader'],
             exclude: /node_modules/
-        }
+        }]
     },
     resolve: {
-        extension: ['.js', '.jsx']
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new HtmlWebpackPlugin({
