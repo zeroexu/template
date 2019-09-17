@@ -7,15 +7,24 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-
+    devServer: {
+        port: 4000
+    },
     module: {
-        rules: []
+        rules: {
+            test: /\.(js | jsx)$/,
+            use: ['babel-loader'],
+            exclude: /node_modules/
+        }
+    },
+    resolve: {
+        extension: ['.js', '.jsx']
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
             templateParameters: {
-                titulo: 'Template webpack',
+                title: 'Template webpack zeroexu',
             }
         })
     ]
