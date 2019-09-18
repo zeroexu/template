@@ -1,8 +1,10 @@
 import React from 'react';
-
-const MiniCardList = () => {
+import MiniCard from './mini_card';
+const MiniCardList = ({ miniCards = [] }) => {
     return <div className={'mini-card-list'}>
-        iterate here cards
+        {miniCards.map(minicard => {
+            return <MiniCard minicard={minicard} />
+        })}
     </div>
 }
 

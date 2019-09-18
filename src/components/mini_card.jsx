@@ -1,8 +1,14 @@
 import React from 'react';
 
-const MiniCard = () => {
-    return <div>
-        mini
+const MiniCard = ({ minicard }) => {
+    const { label, price } = minicard;
+    return <div className={'mini-card element'}>
+        <div>
+            {label}
+        </div>
+        <div>
+            {price}
+        </div>
     </div>
 }
 
