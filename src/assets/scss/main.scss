@@ -1,0 +1,23 @@
+$color_primary: blue;
+$color_secondary: red;
+$color_primary_background: white;
+$color_secondary_background: grey;
+$color_primary_text: black;
+
+body{
+    font-family: Roboto;
+    background-color: $color_primary_background;
+    margin: 0 0;
+    div{
+        border: 1px solid $color_secondary_background;
+        .logo{
+            background-color: $color_primary_background;
+        }
+        .mini-card-list{
+            background-color: $color_secondary_background;
+        }
+        .card-list{
+            background-color: $color_primary_background;
+        }
+    }
+}
