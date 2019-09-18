@@ -1,6 +1,12 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Keys = require('./src/utils/keys');
+const enviromentRoute =
+    process.env.NODE_ENV
+        ? `${__dirname}/envs/.env.${process.env.NODE_ENV}`
+        : `${__dirname}/envs/.env.development`;
+
+require('dotenv').config({ path: enviromentRoute });
 
 module.exports = {
     entry: './src/index.js',
@@ -9,7 +15,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        port: Keys.SETTINGS.PORT
+        port: process.env.PORT
     },
     module: {
         rules: [{
@@ -25,8 +31,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             templateParameters: {
-                title: Keys.SETTINGS.APP_NAME
+                title: process.env.APP_NAME
             }
+        }),
+        new webpack.EnvironmentPlugin(['PORT', 'APP_NAME', 'GRAPHQL_API', 'NODE_ENV', 'MAINTENANCE', 'LANGUAGE']),
+        new webpack.DefinePlugin({
+            'process.env.PORT': JSON.stringify(process.env.PORT),
+            'process.env.APP_NAME': JSON.stringify(process.env.APP_NAME),
+            'process.env.GRAPHQL_API': JSON.stringify(process.env.GRAPHQL_API),
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            'process.env.MAINTENANCE': JSON.stringify(process.env.MAINTENANCE),
+            'process.env.LANGUAGE': JSON.stringify(process.env.LANGUAGE)
         })
-    ]
+    ],
+
 }
