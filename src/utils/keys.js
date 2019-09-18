@@ -1,9 +1,3 @@
-require('dotenv').config({
-    path: process.env.NODE_ENV
-        ? `${__dirname}/../../envs/.env.${process.env.NODE_ENV}`
-        : `${__dirname}/../../envs/.env.development`
-});
-
 module.exports = {
     SETTINGS: {
         PORT: process.env.PORT,
