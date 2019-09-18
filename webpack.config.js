@@ -1,6 +1,7 @@
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Keys = require('./src/utils/keys');
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -8,7 +9,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        port: 4000
+        port: Keys.SETTINGS.PORT
     },
     module: {
         rules: [{
@@ -24,7 +25,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             templateParameters: {
-                title: 'Template webpack zeroexu',
+                title: Keys.SETTINGS.APP_NAME
             }
         })
     ]
