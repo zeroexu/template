@@ -1,9 +1,10 @@
-const { request } = require('graphql-request')
+const { request } = require('graphql-request');
 
-const requester = (url, query) => {
+const requesterGraphql = (url, query) => {
     return request(url, query);
 }
 
+
 module.exports = {
-    requester
+    requesterGraphql
 };
