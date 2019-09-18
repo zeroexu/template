@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractMiniPlugin = require('mini-css-extract-plugin');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const enviromentRoute =
     process.env.NODE_ENV
@@ -22,6 +24,29 @@ module.exports = {
             test: /\.(js|jsx)$/,
             use: ['babel-loader'],
             exclude: /node_modules/
+        },
+        {
+            test: /\.ico$/,
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]'
+            }
+        },
+        {
+            test: /\.(png|jpg|jpeg|svg|gif)$/,
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]',
+                outputPath: 'images',
+                publicPath: '/images',
+            }
+        }, {
+            test: /\.(css|sass|scss)$/,
+            use: [
+                MiniCssExtractMiniPlugin.loader,
+                'css-loader',
+                'sass-loader'
+            ]
         }]
     },
     resolve: {
@@ -42,6 +67,9 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             'process.env.MAINTENANCE': JSON.stringify(process.env.MAINTENANCE),
             'process.env.LANGUAGE': JSON.stringify(process.env.LANGUAGE)
+        }),
+        new MiniCssExtractMiniPlugin({
+            filename: 'style.css'
         })
     ],
 
