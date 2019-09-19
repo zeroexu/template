@@ -1,8 +1,10 @@
 import React from 'react';
-import image from '../assets/images/logox100hider.jpg';
+import image from '../assets/images/logox100.jpg';
 const Header = () => {
-    return <div className={'logo'}>
-        <img src={image} alt="" />
+    return <div className={'header'}>
+        <img src={image} alt="" className={'float-left'} />
+        <h2 className={'float-left'}>un slogan para algo</h2>
+        <div className={'cleaner-floater'}></div>
     </div>
 }
 

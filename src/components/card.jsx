@@ -5,10 +5,16 @@ const Card = ({ card }) => {
     return <div className={'card element'}>
         <img src={image} />
         <div>
-            {label}
+            <span className={'sub-title float-left'}>xxxx</span>
+            <span className={'sub-title float-right'}>yyyy</span>
         </div>
-        <div>
-            {price}
+        <div className={'cleaner-floater'}>
+            <span className={'title float-left'}>{label}</span>
+            <span className={'title float-right'}>{price}</span>
+
+        </div>
+        <div className={'cleaner-floater'}>
+            <button>Button</button>
         </div>
     </div>
 }
