@@ -37,7 +37,6 @@ const handleRequestStayData = async (dispatch) => {
 
     const response = await requesterGraphql(url, query);
 
-
     return dispatch({
         type: "getAllStayData",
         response: {
