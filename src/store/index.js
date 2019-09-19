@@ -3,8 +3,10 @@ import React from "react";
 export const initialState = {
     count: 0,
     loadingcards: false,
-    firstLoad: true,
+    firstLoadStay: true,
+    firstLoadCards: true,
     minicards: [],
+    card: [],
     currentStay: 0
 };
 
@@ -25,6 +27,7 @@ export const reducer = (state, action) => {
             console.log(action.response)
             if (action.response)
                 newstate = {
+                    firstLoadCards: false,
                     loadingcards: action.response.loading,
                     cards: action.response.data.allCards
                 };
@@ -33,7 +36,7 @@ export const reducer = (state, action) => {
             console.log(action.response)
             if (action.response)
                 newstate = {
-                    firstLoad: false,
+                    firstLoadStay: false,
                     loadingstays: action.response.loading,
                     minicards: action.response.data.allStayDatas
                 };

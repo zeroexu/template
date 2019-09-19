@@ -6,7 +6,7 @@ import MiniCard from './mini_card';
 
 const MiniCardList = () => {
     const { store, dispatch } = useContext(Context);
-    if (store.firstLoad === true)
+    if (store.firstLoadStay === true)
         handleRequestStayData(dispatch);
     const minicards = store.minicards;
     console.log(minicards, store);
