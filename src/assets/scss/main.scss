@@ -1,8 +1,16 @@
-$color_primary: blue;
+$color_primary: #02a8e0;
 $color_secondary: #E10208;
 $color_primary_background: white;
 $color_secondary_background: #cccccc;
 $color_primary_text: black;
+$color_secondary_text: #666666;
+/*
+$color_primary: #666666;
+$color_secondary: #666666;
+$color_primary_background: white;
+$color_secondary_background: #cccccc;
+$color_primary_text: #666666;
+$color_secondary_text: #666666;*/
 
 body{
     
@@ -10,6 +18,7 @@ body{
     font-family: Roboto;
     background-color: $color_primary_background;
     margin: 0 0;
+    
     .header{
         width: 90%;
         margin-left:auto;
@@ -27,7 +36,7 @@ body{
     div{
         .bow-mini{
             
-            background-image: url("/images/bow-mini.jpg");
+            //background-image: url("/images/bow-mini.jpg");
             color: $color_primary_text;
             text-align: center;
            
@@ -73,6 +82,17 @@ body{
                 background-color: $color_primary_background;
                 margin-bottom: -30px;
                 box-shadow: 1px 1px 2px #e5e1e1;
+                
+                .title{
+                    color: $color_secondary_background;
+                    font-size: 12px;
+                    color: $color_primary;
+                }
+                .sub-title{
+                    color: $color_secondary_text;
+                    font-size: 9px;
+                }
+               
             }
             
             @media (max-width: 800px) {
@@ -95,29 +115,33 @@ body{
             margin-right: auto;
             width: 90%;
             .card{
-               
+                
                 background-color: $color_primary_background;
                 margin-bottom:20px;
                 margin-left:auto;
                 margin-right: auto;
                 box-shadow: 1px 1px 2px #e5e1e1;
-                div{
 
+                .inner{
+                    padding: 10px;
+               }
+                div{
+                   
                    .title{
                     color: $color_secondary_background;
-                    font-size: 30px;
+                    font-size: 25px;
                     color: $color_secondary;
                    }
                    .sub-title{
-                    color: $color_secondary_background;
+                    color: $color_primary_text;
                     font-size: 9px;
                    }
                     button{
                         width: 100px;
                         padding: 5px;
                         float:right;
-                        color: $color_secondary_background;
-                        border: 1px solid  $color_secondary_background;
+                        color: $color_primary;
+                        border: 1px solid  $color_primary;
                         background-color: $color_primary_background;
                     }
                 }
@@ -130,6 +154,10 @@ body{
             border-radius: 3px;
             //box-shadow: 0px 2px 6px rgba(0,0,0,0,15);
             margin-bottom: 0.5em;
+        }
+
+        .inner{
+            padding: 5px;
         }
         
     }
