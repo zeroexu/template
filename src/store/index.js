@@ -1,6 +1,12 @@
 import React from "react";
 
-export const initialState = { count: 0, loadingcards: false };
+export const initialState = {
+    count: 0,
+    loadingcards: false,
+    firstLoad: true,
+    minicards: [],
+    currentStay: 0
+};
 
 export const reducer = (state, action) => {
     console.log(state, action)
@@ -22,6 +28,18 @@ export const reducer = (state, action) => {
                     loadingcards: action.response.loading,
                     cards: action.response.data.allCards
                 };
+            break;
+        case "getAllStayData":
+            console.log(action.response)
+            if (action.response)
+                newstate = {
+                    firstLoad: false,
+                    loadingstays: action.response.loading,
+                    minicards: action.response.data.allStayDatas
+                };
+            break;
+        case "setCurrentStay":
+            newstate = { currentStay: action.newStay };
             break;
         default:
             newstate = {};

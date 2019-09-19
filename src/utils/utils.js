@@ -1,6 +1,6 @@
 const { request } = require('graphql-request');
 const Keys = require('./keys');
-const { allCards } = require('./queries');
+const { allCards, allStayDatasByLabelStart } = require('./queries');
 
 
 const requesterGraphql = (url, query) => {
@@ -31,6 +31,33 @@ const handleRequestCards = async (dispatch) => {
     });
 }
 
+const handleRequestStayData = async (dispatch) => {
+    let url = Keys.REPOSITORIES.GRAPH_API;
+    let query = allStayDatasByLabelStart("");
+
+    const response = await requesterGraphql(url, query);
+
+
+    return dispatch({
+        type: "getAllStayData",
+        response: {
+            loading: false,
+            data: response
+        }
+    });
+}
+
+const handleCurrentStay = (dispatch, stayId) => {
+    return dispatch({
+        type: "setCurrentStay",
+        newStay: stayId
+    });
+}
+
 export default {
-    requesterGraphql, requesterGraphqlFormatState, handleRequestCards
+    requesterGraphql,
+    requesterGraphqlFormatState,
+    handleRequestCards,
+    handleRequestStayData,
+    handleCurrentStay
 };

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from "../store/index";
+const utils = require('../utils/utils');
+const { handleRequestStayData } = utils.default;
 import MiniCard from './mini_card';
-const MiniCardList = ({ miniCards = [] }) => {
-    return <div className={'bow-mini'}>
-        <h1>Un titulo para <span className={'strong'}>algo</span></h1>
-        <div className={'mini-card-list'}>
-            {miniCards.map((minicard, index) => {
-                return <MiniCard minicard={minicard} key={index} />
-            })}
-        </div>
+
+const MiniCardList = () => {
+    const { store, dispatch } = useContext(Context);
+    if (store.firstLoad === true)
+        handleRequestStayData(dispatch);
+    const minicards = store.minicards;
+    console.log(minicards, store);
+    return <div className={'mini-card-list'}>
+        {minicards.map((minicard, index) => {
+            return <MiniCard minicard={minicard} key={index} />
+        })}
     </div>
 }
 

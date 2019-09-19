@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logox100.jpg';
+import image from '../assets/images/logox100Hider.jpg';
 const Header = () => {
     return <div className={'header'}>
         <img src={image} alt="" className={'float-left'} />

@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from "../store/index";
+const utils = require('../utils/utils');
+const { handleCurrentStay } = utils.default;
 
 const MiniCard = ({ minicard }) => {
-    const { label, price } = minicard;
-    return <div className={'mini-card element'}>
+    const { store, dispatch } = useContext(Context);
+    const { label, bestPrice, customId } = minicard;
+    return <button className={'mini-card element'} onClick={() => {
+        handleCurrentStay(dispatch, customId);
+    }}>
+
         <div>
-            {label}
+            <span className={'sub-title'}>{label}</span>
         </div>
         <div>
-            {price}
+            <span className={'title'}>{bestPrice}</span>
         </div>
-    </div>
+
+    </button>
 }
 
 export default MiniCard;
