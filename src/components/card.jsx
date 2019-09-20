@@ -4,7 +4,7 @@ const Card = ({ card }) => {
   const { description, price, imgUrl, link } = card
   return (
     <div className='card element'>
-      <a href={link} target="_blamk">
+      <a href={link} target='_blank'>
         <img src={imgUrl} width={250} height={220} />
         <div className='inner'>
           <div>
