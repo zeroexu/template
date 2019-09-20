@@ -14,7 +14,7 @@ const MiniCard = ({ minicard }) => {
             <span className={'sub-title'}>{label}</span>
         </div>
         <div>
-            <span className={'title'}>{bestPrice}</span>
+            <span className={'title'}>${bestPrice}</span>
         </div>
 
     </button>

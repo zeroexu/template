@@ -9,7 +9,6 @@ const MiniCardList = () => {
     if (store.firstLoadStay === true)
         handleRequestStayData(dispatch);
     const minicards = store.minicards;
-    console.log(minicards, store);
     return <div className={'mini-card-list'}>
         {minicards.map((minicard, index) => {
             return <MiniCard minicard={minicard} key={index} />
