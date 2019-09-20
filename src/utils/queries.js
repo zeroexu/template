@@ -5,7 +5,8 @@ const allCards = () => {
           link,
           description,
           price,
-          stayId
+          stayId,
+          imgUrl
         }
       }`;
 }
@@ -13,11 +14,12 @@ const allCards = () => {
 const allCardsByStayId = (stayId) => {
     return `{
         allCards(filter:{ stayId:"${stayId}" }){
-            id
-            description,
-            stayId,
-            link,
-            imgUrl
+          imgUrl,
+          link,
+          description,
+          price,
+          stayId,
+          imgUrl
           }
       }`;
 }
