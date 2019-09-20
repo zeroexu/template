@@ -4,11 +4,16 @@ import MiniCard from './mini_card'
 const utils = require('../utils/utils')
 const { handleRequestStayData } = utils.default
 
-const MiniCardList = () => {
+const callRequest = () => {
   const { store, dispatch } = useContext(Context)
   if (store.firstLoadStay === true) {
     handleRequestStayData(dispatch)
   }
+}
+
+const MiniCardList = () => {
+  const { store } = useContext(Context)
+  callRequest()
 
   const minicards = store.minicards
   return (

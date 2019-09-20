@@ -4,7 +4,7 @@ import Card from './card'
 const utils = require('../utils/utils')
 const { handleRequestCards, handleRequestCardsByStayId } = utils.default
 
-const CardList = () => {
+const callRequest = () => {
   const { store, dispatch } = useContext(Context)
   const [localStayId, setStay] = useState(0)
 
@@ -16,6 +16,11 @@ const CardList = () => {
     handleRequestCardsByStayId(dispatch, parseInt(store.currentStay, 10))
     setStay(parseInt(store.currentStay, 10))
   }
+}
+
+const CardList = () => {
+  const { store } = useContext(Context)
+  callRequest()
 
   const cards = store.cards
   return (
