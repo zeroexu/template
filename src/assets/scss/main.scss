@@ -130,7 +130,9 @@ body{
                     padding: 10px;
                }
                 div{
-                   
+                   .fly-icon{
+                    margin-top:-5px;
+                   }
                    .title{
                     color: $color_secondary_background;
                     font-size: 18px;
