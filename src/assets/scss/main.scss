@@ -4,13 +4,13 @@ $color_primary_background: white;
 $color_secondary_background: #cccccc;
 $color_primary_text: black;
 $color_secondary_text: #666666;
-
+/*
 $color_primary: #666666;
 $color_secondary: #666666;
 $color_primary_background: white;
 $color_secondary_background: #cccccc;
 $color_primary_text: #666666;
-$color_secondary_text: #666666;
+$color_secondary_text: #666666;*/
 
 body{
     
@@ -24,10 +24,14 @@ body{
         margin-left:auto;
             margin-right: auto;
         background-color: $color_primary_background;
+        img{
+            margin: 5px 0px;
+        }
         h2{
             color: $color_secondary;
             font-size: 14px;
             margin-top: 18px;
+            margin-left: 20px;
         }
         @media (max-width: 800px) {
             width: 100%;
@@ -36,7 +40,7 @@ body{
     div{
         .bow-mini{
             
-            //background-image: url("/images/bow-mini.jpg");
+            background-image: url("/images/bow-mini.jpg");
             color: $color_primary_text;
             text-align: center;
            
@@ -80,9 +84,9 @@ body{
                 width: 100px;
                 height: 50px;
                 background-color: $color_primary_background;
-                margin-bottom: -30px;
+                margin-bottom: -5px;
                 box-shadow: 1px 1px 2px #e5e1e1;
-                
+                cursor: pointer;
                 .title{
                     color: $color_secondary_background;
                     font-size: 12px;
@@ -129,20 +133,28 @@ body{
                    
                    .title{
                     color: $color_secondary_background;
-                    font-size: 25px;
+                    font-size: 18px;
                     color: $color_secondary;
+                    font-weight: 700;
+                    word-break: keep-all;
+                    width: 110px;
+                    margin-top:10px;
                    }
                    .sub-title{
                     color: $color_primary_text;
                     font-size: 9px;
                    }
                     button{
+                        text-align: right;
                         width: 100px;
-                        padding: 5px;
-                        float:right;
+                        padding: 5px 0px;
+                        margin-top: 32px;
                         color: $color_primary;
-                        border: 1px solid  $color_primary;
+                        border: 0px solid  $color_primary;
                         background-color: $color_primary_background;
+                        float:right;
+                        bottom: 5px;
+                        position: relative;
                     }
                 }
                 
@@ -164,9 +176,11 @@ body{
 
     .float-left{
         float:left;
+        text-align: left;
     }
     .float-right{
         float:right;
+        text-align: right;
     }
     .cleaner-floater{
         clear: both;
