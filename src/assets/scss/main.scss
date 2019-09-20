@@ -4,13 +4,13 @@ $color_primary_background: white;
 $color_secondary_background: #cccccc;
 $color_primary_text: black;
 $color_secondary_text: #666666;
-/*
-$color_primary: #666666;
-$color_secondary: #666666;
+
+$color_primary: #fcfcfc;
+$color_secondary: #fcfcfc;
 $color_primary_background: white;
 $color_secondary_background: #cccccc;
-$color_primary_text: #666666;
-$color_secondary_text: #666666;*/
+$color_primary_text: #fcfcfc;
+$color_secondary_text: #fcfcfc;
 
 body{
     
@@ -40,7 +40,7 @@ body{
     div{
         .bow-mini{
             
-            background-image: url("/images/bow-mini.jpg");
+            //background-image: url("/images/bow-mini.jpg");
             color: $color_primary_text;
             text-align: center;
            

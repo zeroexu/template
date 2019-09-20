@@ -1,5 +1,5 @@
 const allCards = () => {
-    return `{
+  return `{
         allCards{
           imgUrl,
           link,
@@ -8,11 +8,11 @@ const allCards = () => {
           stayId,
           imgUrl
         }
-      }`;
+      }`
 }
 
 const allCardsByStayId = (stayId) => {
-    return `{
+  return `{
         allCards(filter:{ stayId:"${stayId}" }){
           imgUrl,
           link,
@@ -21,24 +21,24 @@ const allCardsByStayId = (stayId) => {
           stayId,
           imgUrl
           }
-      }`;
+      }`
 }
 
 const allStayDatasByLabelStart = (partial) => {
-    return `{
+  return `{
         allStayDatas(filter:{ label_starts_with:"${partial}"}){
           label,bestPrice,customId
         }
-      }`;
+      }`
 }
 const stayDataByCustomID = (id) => {
-    return `{
+  return `{
         StayData(customId:"${id}"){
           bestPrice,label,customId
         }
-      }`;
+      }`
 }
 
 module.exports = {
-    allCards, allCardsByStayId, allStayDatasByLabelStart, stayDataByCustomID
-};
+  allCards, allCardsByStayId, allStayDatasByLabelStart, stayDataByCustomID
+}

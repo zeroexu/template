@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "npx webpack-dev-server -d",
-        "build-dev": "sudo npx webpack -d"
+        "build-dev": "sudo npx webpack -d",
+        "lint": "standard"
     },
     "repository": {
         "type": "git",
@@ -19,7 +20,9 @@
     },
     "homepage": "https://github.com/zeroexu/template#readme",
     "devDependencies": {
+        "babel-eslint": "^10.0.3",
         "html-webpack-plugin": "^3.2.0",
+        "standard": "^14.3.1",
         "webpack": "^4.40.2",
         "webpack-cli": "^3.3.9",
         "webpack-dev-server": "^3.8.1"
@@ -41,5 +44,8 @@
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "sass-loader": "^8.0.0"
+    },
+    "standard": {
+        "parser": "babel-eslint"
     }
 }

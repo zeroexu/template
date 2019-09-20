@@ -1,6 +1,6 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 import Core from './core'
 
 render(<Core />,
-    document.getElementById('core')); 
+  document.getElementById('core'))
