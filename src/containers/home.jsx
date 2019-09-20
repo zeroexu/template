@@ -2,9 +2,6 @@ import React, { useReducer } from 'react';
 import Header from '../components/header';
 import MiniCardListContaniner from '../components/mini_cards_container';
 import CardList from '../components/card_list';
-import Card from '../components/card';
-import Photo from '../components/test/photo';
-import RedSquare from '../components/test/RedSquare';
 import { Context, initialState, reducer } from "../store/index";
 const path = require('path');
 const predata = {
