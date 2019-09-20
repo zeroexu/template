@@ -1,7 +1,6 @@
 const allCards = () => {
   return `{
         allCards{
-          imgUrl,
           link,
           description,
           price,
@@ -14,7 +13,6 @@ const allCards = () => {
 const allCardsByStayId = (stayId) => {
   return `{
         allCards(filter:{ stayId:"${stayId}" }){
-          imgUrl,
           link,
           description,
           price,
