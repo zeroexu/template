@@ -7,8 +7,8 @@ export const initialState = {
   minicards: [],
   cards: [],
   currentStay: 0,
-  currentSites: "",
-  currentSiteMessage: ""
+  currentSites: '',
+  currentSiteMessage: ''
 }
 
 export const reducer = (state, action) => {

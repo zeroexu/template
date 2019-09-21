@@ -1,5 +1,3 @@
-import { gzip } from 'zlib'
-
 const { request } = require('graphql-request')
 const Keys = require('./keys')
 const { allCards, allStayDatasByLabelStart, allCardsByStayId } = require('./queries')
@@ -71,9 +69,8 @@ const handleCurrentStay = (dispatch, stayId) => {
   })
 }
 
-
-const hackName = (img_name) => {
-  const partials = img_name.split('/')
+const hackName = (imgName) => {
+  const partials = imgName.split('/')
 
   if (partials.length > 0) {
     return partials[partials.length - 1]
@@ -84,13 +81,14 @@ const hackName = (img_name) => {
       .replace(/-/gi, ' ')
       .toUpperCase()
   } else {
-    return ""
+    return ''
   }
 }
 
 const refineNameFromCardsRequested = (cards) => {
   cards.map(card => {
-    return card.nameSite = hackName(card.imgUrl)
+    card.nameSite = hackName(card.imgUrl)
+    return card
   })
 }
 
@@ -104,9 +102,11 @@ const filterNameFromCardsRequested = (cards) => {
 
 const setMessageSite = (sites) => {
   if (sites.length > 1) {
-    return "en todas las estadías"
+    return 'en todas las estadías'
+  } else if (sites.length === 1) {
+    return 'en ' + [...new Set(sites)][0]
   } else {
-    return "en " + [...new Set(sites)][0]
+    return ''
   }
 }
 
