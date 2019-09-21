@@ -1,3 +1,5 @@
+import { gzip } from 'zlib'
+
 const { request } = require('graphql-request')
 const Keys = require('./keys')
 const { allCards, allStayDatasByLabelStart, allCardsByStayId } = require('./queries')
@@ -24,7 +26,7 @@ const handleRequestCards = async (dispatch) => {
     type: 'getAllCards',
     response: {
       loading: false,
-      data: response
+      data: response.allCards
     }
   })
 }
@@ -42,7 +44,7 @@ const handleRequestCardsByStayId = async (dispatch, id) => {
     type: 'getAllCards',
     response: {
       loading: false,
-      data: response
+      data: response.allCards
     }
   })
 }
@@ -57,7 +59,7 @@ const handleRequestStayData = async (dispatch) => {
     type: 'getAllStayData',
     response: {
       loading: false,
-      data: response
+      data: response.allStayDatas
     }
   })
 }

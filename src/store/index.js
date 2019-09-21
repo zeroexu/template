@@ -15,18 +15,12 @@ export const reducer = (state, action) => {
     case 'reset':
       newstate = initialState
       break
-    case 'increment':
-      newstate = { count: state.count + 1 }
-      break
-    case 'decrement':
-      newstate = { count: state.count - 1 }
-      break
     case 'getAllCards':
       if (action.response) {
         newstate = {
           firstLoadCards: false,
           loadingcards: action.response.loading,
-          cards: action.response.data.allCards
+          cards: action.response.data
         }
       }
       break
@@ -35,7 +29,7 @@ export const reducer = (state, action) => {
         newstate = {
           firstLoadStay: false,
           loadingstays: action.response.loading,
-          minicards: action.response.data.allStayDatas
+          minicards: action.response.data
         }
       }
       break
@@ -46,7 +40,7 @@ export const reducer = (state, action) => {
       newstate = {
         firstLoadCards: false,
         loadingcards: action.response.loading,
-        cards: action.response.data.allCards
+        cards: action.response.data
       }
       break
     default:
