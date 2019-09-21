@@ -21,14 +21,7 @@ const handleRequestCards = async (dispatch) => {
   const query = allCards()
 
   const response = await requesterGraphql(url, query)
-
-  return dispatch({
-    type: 'getAllCards',
-    response: {
-      loading: false,
-      data: response.allCards
-    }
-  })
+  return processCardsResponse(dispatch, response)
 }
 
 const handleRequestCardsByStayId = async (dispatch, id) => {
@@ -39,12 +32,19 @@ const handleRequestCardsByStayId = async (dispatch, id) => {
   }
 
   const response = await requesterGraphql(url, query)
+  return processCardsResponse(dispatch, response)
+}
 
+const processCardsResponse = (dispatch, response) => {
+  refineNameFromCardsRequested(response.allCards)
+  const currentSites = filterNameFromCardsRequested(response.allCards)
   return dispatch({
     type: 'getAllCards',
     response: {
       loading: false,
-      data: response.allCards
+      data: response.allCards,
+      currentSites: currentSites,
+      currentSiteMessage: setMessageSite(currentSites)
     }
   })
 }
@@ -69,6 +69,45 @@ const handleCurrentStay = (dispatch, stayId) => {
     type: 'setCurrentStay',
     newStay: stayId
   })
+}
+
+
+const hackName = (img_name) => {
+  const partials = img_name.split('/')
+
+  if (partials.length > 0) {
+    return partials[partials.length - 1]
+      .replace('.jpg', '')
+      .replace('cluster-', '')
+      .replace('img-', '')
+      .replace(/_/gi, ' ')
+      .replace(/-/gi, ' ')
+      .toUpperCase()
+  } else {
+    return ""
+  }
+}
+
+const refineNameFromCardsRequested = (cards) => {
+  cards.map(card => {
+    return card.nameSite = hackName(card.imgUrl)
+  })
+}
+
+const filterNameFromCardsRequested = (cards) => {
+  const sites = []
+  cards.forEach(card => {
+    sites.push(card.nameSite)
+  })
+  return [...new Set(sites)]
+}
+
+const setMessageSite = (sites) => {
+  if (sites.length > 1) {
+    return "en todas las estadías"
+  } else {
+    return "en " + [...new Set(sites)][0]
+  }
 }
 
 export default {

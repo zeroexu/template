@@ -1,11 +1,12 @@
 import React from 'react'
 import fly from '../assets/images/fly.png'
 const Card = ({ card }) => {
-  const { description, price, imgUrl, link } = card
+  const { description, price, imgUrl, link, nameSite } = card
   return (
     <div className='card element'>
-      <a href={link} target='_blank'>
-        <img src={imgUrl} width={250} height={220} />
+      <a href={link} target='_blank' title={nameSite}>
+        <img src={imgUrl} width={250} height={220} alt={nameSite} />
+        <h3 className={'sub-title'}>{nameSite}</h3>
         <div className='inner'>
           <div>
             <img src={fly} className='fly-icon float-left' />
@@ -22,7 +23,7 @@ const Card = ({ card }) => {
           <div className='cleaner-floater' />
         </div>
       </a>
-    </div>)
+    </div >)
 }
 
 export default Card

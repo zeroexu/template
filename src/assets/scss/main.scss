@@ -18,7 +18,9 @@ body{
     font-family: Roboto;
     background-color: $color_primary_background;
     margin: 0 0;
-    
+    a{
+      text-decoration: none;
+    }
     .header{
         width: 90%;
         margin-left:auto;
@@ -133,7 +135,15 @@ body{
                 }
                 .inner{
                     padding: 10px;
-               }
+                }
+                h3{
+                    color: $color_secondary_background;
+                    font-size: 18px;
+                    color: $color_secondary;
+                    font-weight: 700;
+                    word-break: keep-all;
+                    margin: 0px;
+                }
                 div{
                    .fly-icon{
                     margin-top:-5px;

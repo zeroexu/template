@@ -6,7 +6,9 @@ export const initialState = {
   firstLoadCards: true,
   minicards: [],
   cards: [],
-  currentStay: 0
+  currentStay: 0,
+  currentSites: "",
+  currentSiteMessage: ""
 }
 
 export const reducer = (state, action) => {
@@ -20,7 +22,9 @@ export const reducer = (state, action) => {
         newstate = {
           firstLoadCards: false,
           loadingcards: action.response.loading,
-          cards: action.response.data
+          cards: action.response.data,
+          currentSites: action.response.currentSites,
+          currentSiteMessage: action.response.currentSiteMessage
         }
       }
       break
@@ -40,7 +44,9 @@ export const reducer = (state, action) => {
       newstate = {
         firstLoadCards: false,
         loadingcards: action.response.loading,
-        cards: action.response.data
+        cards: action.response.data,
+        currentSites: action.response.currentSites,
+        currentSiteMessage: action.response.currentSiteMessage
       }
       break
     default:
