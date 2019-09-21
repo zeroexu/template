@@ -1,7 +1,7 @@
 $color_primary: #02a8e0;
 $color_secondary: #E10208;
 $color_primary_background: white;
-$color_secondary_background: #cccccc;
+$color_secondary_background: #eeeeee;
 $color_primary_text: black;
 $color_secondary_text: #666666;
 
@@ -16,16 +16,18 @@ body{
     
     color: $color_secondary_background;
     font-family: Roboto;
-    background-color: $color_primary_background;
+    background-color: $color_secondary_background;
     margin: 0 0;
     a{
       text-decoration: none;
     }
-    .header{
+    .header-wrapper{
+      background-color: $color_primary_background;
+      .header{
         width: 90%;
         margin-left:auto;
-            margin-right: auto;
-        background-color: $color_primary_background;
+        margin-right: auto;
+       
         img{
             margin: 5px 0px;
         }
@@ -39,6 +41,8 @@ body{
             width: 100%;
         }
     }
+    }
+    
     div{
         .bow-mini{
             
@@ -73,6 +77,7 @@ body{
                     font-weight: 700;
                 }
             }
+           
         }
         .mini-card-list{
             display:grid;
@@ -115,7 +120,7 @@ body{
             }
         }
         .card-list{
-            background-color: $color_primary_background;
+           
             display:grid;
             grid-gap: 15px;
             padding: 15px;
