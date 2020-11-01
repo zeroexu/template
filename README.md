@@ -29,4 +29,6 @@ Para instalar solo tienes que ejecutar en el terminal
 Si deseas puedes configurar tus variables de entorno en al carpeta env
 Puedes integrar estos archivos a tu archivo de configuracion de integracion continua para que hagas deployment a tu servidor.
 
+npm i babel-eslint html-webpack-plugin standard webpack webpack-cli webpack-dev-server -D
 
+npm i @babel/cli @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/preset-react @babel/runtime babel-loader css-loader dotenv file-loader graphql-request mini-css-extract-plugin node-sass react react-dom sass-loader 
